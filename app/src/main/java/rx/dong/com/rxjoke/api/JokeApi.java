@@ -18,5 +18,10 @@ public interface JokeApi {
     Observable<JokeEntity> getJoke(@Query("page") int page);
 
     @GET("showapi_joke/joke_text")
+
+
+
+
+    
     Call<JokeEntity> callJoke(@Header("apikey") String apikey, @Query("page") int page);
 }

@@ -138,7 +138,7 @@ public class MainActivity extends BaseActivity implements JokeView,
     }
     private void initData() {
         jokeList = new ArrayList<>();
-        jokeAdapter = new JokeAdapter(jokeList);
+        jokeAdapter = new JokeAdapter(this,jokeList);
         recordRecycleview.setAdapter(jokeAdapter);
 
         jokePresenter = new JokePresenter();

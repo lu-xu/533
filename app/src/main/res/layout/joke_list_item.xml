@@ -46,4 +46,9 @@
         android:text="我去早市买菜，买了很多，都快拎不动了，这时就听一男人喊：\u201c美女，拎不动了吧？\u201d扭头一看，猪肉摊上一帅哥正看着我，我暗喜，难道帅哥看我长得漂亮要帮忙？只听帅哥说：\u201c美女买点猪肉吧"
         android:textSize="@dimen/txt_18sp"
         />
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

@@ -47,4 +47,5 @@ dependencies {
     compile 'com.nineoldandroids:library:2.4.0'
 
     compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.wilddog:wilddog-client-android:0.6.4+'
 }

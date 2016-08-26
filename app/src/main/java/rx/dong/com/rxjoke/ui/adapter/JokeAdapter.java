@@ -43,6 +43,10 @@ public class JokeAdapter extends RecyclerView.Adapter {
     }
 
     @Override
+    public int getItemCount() {
+        return jokeList.size();
+    }
+    @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         JokeViewHolder jokeViewHolder = (JokeViewHolder) holder;
         jokeViewHolder.title.setText("#" + jokeList.get(position).getTitle() + "#");
@@ -58,24 +62,39 @@ public class JokeAdapter extends RecyclerView.Adapter {
 //        }
 
 
+        if (position % 2 == 0) {
+            Glide.with(context)
+                    .load(R.drawable.huaha)
+                    .asGif()
+                    .centerCrop()
+//                    .dontAnimate()
+                    .placeholder(R.mipmap.ic_launcher)
+                    .error(R.mipmap.ic_launcher)
+                    .into(jokeViewHolder.img);
+
+        } else {
+            jokeViewHolder.img.setBackgroundResource(R.mipmap.a533);
+        }
+        jokeViewHolder.img.setTag(R.id.image_tag, position);
+
 
 //        jokeViewHolder.img.setTag(R.id.image_tag, position);
 //
 ////        if(Integer.parseInt(jokeViewHolder.img.getTag().toString()) != position){
-//            if (position % 2 == 0) {
-                Glide.with(context)
-                        .load(R.drawable.huaha)
-                        .asGif()
-                        .centerCrop()
-//                    .dontAnimate()
-                        .placeholder(R.mipmap.a533)
-                        .error(R.mipmap.ic_launcher)
-                        .into(jokeViewHolder.img);
-
-//            }else{
-//                jokeViewHolder.img.setBackgroundResource(R.mipmap.a533);
-//            }
-        jokeViewHolder.img.setTag(R.id.image_tag, position);
+////            if (position % 2 == 0) {
+//                Glide.with(context)
+//                        .load(R.drawable.huaha)
+//                        .asGif()
+//                        .centerCrop()
+////                    .dontAnimate()
+//                        .placeholder(R.mipmap.a533)
+//                        .error(R.mipmap.ic_launcher)
+//                        .into(jokeViewHolder.img);
+//
+////            }else{
+////                jokeViewHolder.img.setBackgroundResource(R.mipmap.a533);
+////            }
+//        jokeViewHolder.img.setTag(R.id.image_tag, position);
 //        }
 
 //        else {
@@ -109,10 +128,6 @@ public class JokeAdapter extends RecyclerView.Adapter {
         }
     }
 
-    @Override
-    public int getItemCount() {
-        return jokeList.size();
-    }
 
     static class JokeViewHolder extends RecyclerView.ViewHolder {
         @Bind(R.id.title)

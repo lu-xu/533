@@ -2,6 +2,8 @@ package rx.dong.com.rxjoke;
 
 import android.app.Application;
 
+import com.wilddog.client.Wilddog;
+
 //import com.squareup.leakcanary.LeakCanary;
 
 /**
@@ -11,6 +13,7 @@ public class BaseApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Wilddog.setAndroidContext(this);
 //        LeakCanary.install(this);
     }
 }
